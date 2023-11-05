@@ -63,14 +63,18 @@ namespace Application1.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Layout = "_Lab2Layout";
             return View(_employees);
+            
         }
 
         public IActionResult Details(int id = 1)
         {
-
-            var movie = _employees.FirstOrDefault(m => m.Id == id);
-            return View(movie);
+            ViewBag.Layout = "_Lab2Layout";
+           
+            var employee = _employees.FirstOrDefault(m => m.Id == id);
+            return View(employee);
+           
         }
 
         public string Welcome(string name, int numTimes = 1)
