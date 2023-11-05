@@ -1,0 +1,32 @@
+﻿@model Application1.Models.Employee
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Details</h1>
+<div>
+    <h4>Employees</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td>@Model.Name</td>
+            <td rowspan="4" style="vertical-align: top;"><img src="@Model.Image" alt="Employee Image" width="150px" height="150px"</td>
+        </tr>
+        <tr>
+            <td><strong>Surname:</strong></td>
+            <td>@Model.Surname</td>
+        </tr>
+        <tr>
+            <td><strong>Birthday:</strong></td>
+            <td>@Model.BirthDate.ToShortDateString()</td>
+        </tr>
+        <tr>
+            <td><strong>Position:</strong></td>
+            <td>@Model.Position</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
