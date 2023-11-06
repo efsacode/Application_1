@@ -74,9 +74,9 @@ namespace Application1.Controllers
             var employee = _employees.FirstOrDefault(e => e.Id == id);
             if (employee == null)
             {
-                return NotFound(); // Handle when the employee with the given ID is not found
+                return NotFound(); 
             }
-            // Set the layout for this action
+           
             else
             {
                 ViewBag.Layout = "_Lab2Layout";
@@ -84,6 +84,48 @@ namespace Application1.Controllers
 
             }
 
+        }
+
+        public IActionResult Edit(int id)
+        {
+
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            else
+            {
+                ViewBag.Layout = "_Lab2Layout";
+                return View(employee);
+
+            }
+        }
+
+        public IActionResult Update(int id)
+        {
+
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            else
+            {
+                ViewBag.Layout = "_Lab2Layout";
+                return View(employee);
+
+            }
+        }
+
+        
+        [HttpPost]
+        public IActionResult Update(int id, Employee employee)
+        {
+            
+            return RedirectToAction("Index"); 
         }
 
 

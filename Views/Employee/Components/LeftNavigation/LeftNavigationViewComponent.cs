@@ -7,7 +7,7 @@ namespace Application1.Views.Employee.Components.LeftNavigation
     {
         public IViewComponentResult Invoke()
         {
-            // Define the links here
+            
             var links = new List<LeftNavigationLink>
         {
             new LeftNavigationLink { Text = "Home", Controller = "Home", Action = "Index" },

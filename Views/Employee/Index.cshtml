@@ -56,7 +56,7 @@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Update" asp-route-id="@item.Id">Update</a>
                 </td>
         </tr>
 }
@@ -64,17 +64,17 @@
 </table>
 
 <style>
-    /* Header background color */
+    
     th {
         background-color: #aaa;
     }
 
-    /* Even row background color */
+    
     tr:nth-child(even) {
         background-color: #ccc;
     }
 
-    /* Odd row background color */
+   
     tr:nth-child(odd) {
         background-color: #eee;
     }
