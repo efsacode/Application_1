@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<Application1.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = ViewBag.Layout;
 }
-
 <h1>Index</h1>
 
 <p>
@@ -63,3 +62,20 @@
 }
     </tbody>
 </table>
+
+<style>
+    /* Header background color */
+    th {
+        background-color: #aaa;
+    }
+
+    /* Even row background color */
+    tr:nth-child(even) {
+        background-color: #ccc;
+    }
+
+    /* Odd row background color */
+    tr:nth-child(odd) {
+        background-color: #eee;
+    }
+</style>

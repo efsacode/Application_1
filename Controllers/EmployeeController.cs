@@ -65,22 +65,28 @@ namespace Application1.Controllers
         {
             ViewBag.Layout = "_Lab2Layout";
             return View(_employees);
+            return View();
             
         }
 
-        public IActionResult Details(int id = 1)
+        public IActionResult Details(int id)
         {
-            ViewBag.Layout = "_Lab2Layout";
-           
-            var employee = _employees.FirstOrDefault(m => m.Id == id);
-            return View(employee);
-           
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound(); // Handle when the employee with the given ID is not found
+            }
+            // Set the layout for this action
+            else
+            {
+                ViewBag.Layout = "_Lab2Layout";
+                return View(employee);
+
+            }
+
         }
 
-        public string Welcome(string name, int numTimes = 1)
-        {
-            return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-        }
+
 
     }
 }
