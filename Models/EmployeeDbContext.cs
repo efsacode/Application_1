@@ -8,8 +8,8 @@ namespace Application1.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Veritabanı bağlantı dizesini buraya ekleyin
-            optionsBuilder.UseSqlServer("Server=localhost;Database=EmployeeDB;Trusted_Connection=True;");
+            
+            optionsBuilder.UseSqlServer("Data Source=(local)\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True");
         }
     }
 }
